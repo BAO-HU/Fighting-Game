@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box; /*確保 通過添加邊框屬性填充將不生效在計算元素寬度十*/
+}   
+
+#BigRed{
+    position: relative;
+    
+    display: inline-block;
+}
+
+#SmallRed{
+    position: absolute;
+    
+    display: flex; /*代表取所有ㄉ子項目放置，默認下彼此相鄰(水平排序)，即使顯示區塊*/
+
+    width: 100%;   
+
+    align-items: center; /*只有設定為flex才有效*/
+
+    padding: 20px; /*生命兩側的間隔 不連著框 但會有問題 利用box-sizing: border-box;*/
+}
+
+#playerHealth{
+    background-color: red;
+    height: 30px;
+
+    width: 100%;
+    
+}
+
+#timer{
+    background-color: black;
+    width: 100px;
+    height: 100px;
+
+    flex-shrink: 0; /*因為旁邊的區塊(playerHealth enemyHealth)寬度為100% 會導致timer區塊在網頁上看到的寬比實際設定的還小，於是設定此*/
+    
+    /*垂直置中 */
+    display: flex;
+    align-items: center;
+    /*水平置中 */
+    justify-content: center;
+    color: white;
+    border: 4px solid white;
+}
+
+#enemyHealth{
+    background-color: red;
+    height: 30px;
+    width: 100%;
+}
+
+#RealenemyHealth{
+    position: absolute;
+    background-color: #818cf8;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#RealPlayerHealth{
+    position: absolute;
+    background-color: #818cf8;
+    top:0;
+    right: 0;
+    bottom: 0;
+    
+
+    width: 100%;
+    
+}
+
+#result{
+    position:absolute;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    bottom: 0; 
+    left: 0;
+    display: none;
+}
+
